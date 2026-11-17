@@ -1,0 +1,11 @@
+IMÁGENES QUE FALTAN (nombres exactos, en minúscula, formato .jpg)
+Si alguna no está, el sitio muestra un recuadro con la ruta que espera.
+
+abogados/abogado-1.jpg   retrato vertical 4:5 (900x1125), fondo neutro
+abogados/abogado-2.jpg   retrato vertical 4:5
+abogados/abogado-3.jpg   retrato vertical 4:5
+
+Ya incluida: inicio/fondo-inicio.jpg (imagen que se ve hasta que carga el video).
+Usá fotos propias o de bancos de licencia libre (Unsplash, Pexels). Comprimilas a menos de 300 KB.
+Los nombres de los abogados y sus textos alternativos están en index.html.
+Podés borrar este archivo antes de publicar.

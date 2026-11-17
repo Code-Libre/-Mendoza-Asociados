@@ -1,0 +1,13 @@
+VIDEO DE FONDO DE LA PORTADA
+Nombre exacto: fondo-inicio.mp4 (en esta carpeta, en minúscula).
+Si todavía no está, el sitio muestra la imagen img/inicio/fondo-inicio.jpg.
+
+Recomendado: horizontal 1920x1080, de 10 a 20 segundos, sin sonido, formato MP4 (H.264),
+menos de 8 MB y con movimiento lento (oficinas, ciudad, gente trabajando).
+Bancos de licencia libre: Pexels y Coverr. Revisá la licencia y nombrá al autor si la pide.
+No uses videos de Google ni de otras webs.
+Podés borrar este archivo antes de publicar.
+--------------------------------------------------------------
+
+links de imagenes y videos que se utilizan para el proyecto
+video de fondo= Vídeo de <a href="https://pixabay.com/es/users/roque_dg-2650631/?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=198898">Roque_dg</a> de <a href="https://pixabay.com/es//?utm_source=link-attribution&utm_medium=referral&utm_campaign=video&utm_content=198898">Pixabay</a>

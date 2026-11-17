@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mendoza &amp; Asociados | Estudio Jurídico</title>
+  <meta name="description" content="Mendoza y Asociados, estudio jurídico especializado en derecho laboral. Sitio de demostración con datos ficticios.">
+  <!-- Sitio de práctica: que no aparezca en los buscadores -->
+  <meta name="robots" content="noindex">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO ===== -->
+  <header class="encabezado" id="encabezado">
+    <div class="encabezado__interior">
+
+      <a class="marca" href="#inicio" aria-label="Mendoza y Asociados, ir al inicio">
+        <span class="marca__sigla">M&amp;A</span>
+        <span class="marca__nombre">Mendoza &amp; Asociados<small>Estudio jurídico</small></span>
+      </a>
+
+      <button class="boton-menu" id="boton-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Menú">
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+        <span class="boton-menu__linea"></span>
+      </button>
+
+      <nav class="menu" id="menu-principal" aria-label="Principal">
+        <a class="menu__enlace" href="#inicio">Inicio</a>
+        <a class="menu__enlace" href="#quienes-somos">Quiénes somos</a>
+        <a class="menu__enlace" href="#servicios">Áreas de práctica</a>
+        <a class="menu__enlace" href="#abogados">Abogados</a>
+        <a class="menu__enlace" href="#clientes">Clientes</a>
+        <a class="menu__enlace" href="#contacto">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== INICIO (video de fondo) ===== -->
+    <section class="inicio" id="inicio">
+      <!-- Si el video todavía no está en la carpeta video, se ve la imagen de portada -->
+      <video class="inicio__video" autoplay muted loop playsinline poster="" aria-hidden="true">
+        <source src="video/video-fondo-inicio.mp4" type="video/mp4">
+      </video>
+
+      <div class="inicio__panel">
+        <p class="inicio__etiqueta">Estudio jurídico especializado en derecho laboral</p>
+        <h1 class="inicio__titulo">Defendemos sus derechos con rigor y compromiso</h1>
+        <p class="inicio__texto">Más de veinte años acompañando a personas y empresas con asesoramiento claro, honesto y a medida de cada caso.</p>
+        <a class="boton" href="#contacto">Solicitar una consulta</a>
+      </div>
+    </section>
+
+    <!-- ===== QUIÉNES SOMOS ===== -->
+    <section class="seccion quienes-somos" id="quienes-somos">
+      <div class="contenedor cuadricula-dos">
+        <h2 class="titulo-seccion"><strong>Quiénes</strong> somos</h2>
+
+        <div class="quienes-somos__texto">
+          <p>Mendoza &amp; Asociados es un estudio jurídico integrado por abogados con formación especializada y trayectoria en tribunales. Trabajamos cada caso de forma personal, con dedicación y sin promesas que no podamos cumplir.</p>
+          <p>Le explicamos en un lenguaje simple en qué situación se encuentra, qué caminos existen y cuáles son los riesgos de cada uno, para que pueda decidir con información.</p>
+          <p>La confidencialidad y la ética profesional son la base de nuestra relación con cada cliente.</p>
+
+          <!-- Cifras ficticias: se animan al llegar a esta parte -->
+          <ul class="cifras">
+            <li class="cifra"><strong class="cifra__numero" data-meta="4" data-sufijo="+">4+</strong><span>Años de trayectoria</span></li>
+            <li class="cifra"><strong class="cifra__numero" data-meta="300" data-sufijo="+">300+</strong><span>Consultas atendidas</span></li>
+            <li class="cifra"><strong class="cifra__numero" data-meta="3" data-sufijo="">3</strong><span>Abogados especialistas</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ÁREAS DE PRÁCTICA ===== -->
+    <section class="seccion areas" id="servicios">
+      <div class="contenedor cuadricula-dos">
+        <h2 class="titulo-seccion"><strong>Áreas de</strong> práctica</h2>
+
+        <div class="areas__lista">
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-1">Servicios laborales</button>
+            <p class="area__resumen">Asesoramiento y reclamos en toda relación de trabajo.</p>
+            <div class="area__detalle" id="detalle-area-1"><div>
+              <p>Le asesoramos en cualquier conflicto de la relación laboral: diferencias salariales, trabajo no registrado, horas extras, licencias y condiciones de trabajo. Analizamos su situación y llevamos el reclamo por la vía más conveniente, ya sea un acuerdo o un juicio.</p>
+              <a class="area__consulta" href="#contacto" data-area="Servicios laborales">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-2">Indemnizaciones</button>
+            <p class="area__resumen">Cálculo y cobro de lo que le corresponde por ley.</p>
+            <div class="area__detalle" id="detalle-area-2"><div>
+              <p>Calculamos con precisión la indemnización según su antigüedad, salario y causa de la desvinculación. Negociamos con el empleador o la aseguradora y, si no hay acuerdo justo, reclamamos judicialmente hasta el cobro efectivo.</p>
+              <a class="area__consulta" href="#contacto" data-area="Indemnizaciones">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-3">ART</button>
+            <p class="area__resumen">Reclamos por accidentes de trabajo y aseguradoras.</p>
+            <div class="area__detalle" id="detalle-area-3"><div>
+              <p>Si sufrió un accidente en su trabajo o en el trayecto, lo acompañamos frente a la ART: denuncia del siniestro, tratamiento médico, comisiones médicas y reclamo de la indemnización por incapacidad.</p>
+              <a class="area__consulta" href="#contacto" data-area="ART">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-4">Despidos sin causa</button>
+            <p class="area__resumen">Defensa ante despidos injustificados.</p>
+            <div class="area__detalle" id="detalle-area-4"><div>
+              <p>Si lo despidieron sin una causa justificada, evaluamos su caso de inmediato. Le indicamos cómo intimar correctamente, calculamos la liquidación final y reclamamos las indemnizaciones y multas que correspondan.</p>
+              <a class="area__consulta" href="#contacto" data-area="Despidos sin causa">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-5">Enfermedades profesionales</button>
+            <p class="area__resumen">Reclamos por enfermedades causadas por el trabajo.</p>
+            <div class="area__detalle" id="detalle-area-5"><div>
+              <p>Muchas enfermedades se originan en las tareas o el ambiente de trabajo. Reunimos la prueba médica y laboral necesaria para que la enfermedad sea reconocida y reciba la cobertura y la indemnización que corresponde.</p>
+              <a class="area__consulta" href="#contacto" data-area="Enfermedades profesionales">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+          <article class="area">
+            <button class="area__boton" type="button" aria-expanded="false" aria-controls="detalle-area-6">Derecho civil y daños</button>
+            <p class="area__resumen">Reparación de daños y conflictos entre particulares.</p>
+            <div class="area__detalle" id="detalle-area-6"><div>
+              <p>Nos ocupamos de reclamos por daños y perjuicios, accidentes de tránsito, incumplimiento de contratos y cobro de deudas. Buscamos primero una solución negociada y, cuando hace falta, litigamos.</p>
+              <a class="area__consulta" href="#contacto" data-area="Derecho civil y daños">Consultar por este servicio</a>
+            </div></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOGADOS ===== -->
+    <section class="seccion abogados" id="abogados">
+      <div class="contenedor">
+        <h2 class="titulo-seccion titulo-seccion--centrado"><strong>Nuestros</strong> abogados</h2>
+
+        <!-- Nombres y datos ficticios -->
+        <div class="abogados__lista">
+
+          <article class="abogado">
+            <div class="marco abogado__foto"><img src="img/seccion-abogados/Dra. Julia Ferreyra.webp" alt="Retrato de la Dra. Julia Ferreyra" loading="lazy"></div>
+            <h3 class="abogado__nombre">Dra. Julia Ferreyra</h3>
+            <p class="abogado__cargo">Socia fundadora</p>
+            <p class="abogado__contacto">+54 11 0000-0001<br>jferreyra@example.com</p>
+          </article>
+
+          <article class="abogado">
+            <div class="marco abogado__foto"><img src="img/seccion-abogados/Dr. Ramiro Ledesma.webp" alt="Retrato del Dr. Ramiro Ledesma" loading="lazy"></div>
+            <h3 class="abogado__nombre">Dr. Ramiro Ledesma</h3>
+            <p class="abogado__cargo">Socio · Litigios</p>
+            <p class="abogado__contacto">+54 11 0000-0002<br>rledesma@example.com</p>
+          </article>
+
+          <article class="abogado">
+            <div class="marco abogado__foto"><img src="img/seccion-abogados/Dra. Carolina Bustos.webp" alt="Retrato de la Dra. Carolina Bustos" loading="lazy"></div>
+            <h3 class="abogado__nombre">Dra. Carolina Bustos</h3>
+            <p class="abogado__cargo">Socia · Accidentes de trabajo</p>
+            <p class="abogado__contacto">+54 11 0000-0003<br>cbustos@example.com</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CLIENTES ===== -->
+    <section class="seccion clientes" id="clientes">
+      <div class="contenedor">
+        <h2 class="titulo-seccion titulo-seccion--centrado titulo-seccion--claro"><strong>Lo que dicen</strong> nuestros clientes</h2>
+
+        <div class="carrusel" id="carrusel">
+          <div class="carrusel__pistas">
+            <figure class="testimonio">
+              <blockquote>Me despidieron sin aviso y no sabía por dónde empezar. Me explicaron todo con claridad y lograron un acuerdo mejor de lo que esperaba.</blockquote>
+              <figcaption>Carlos R. <span>Despido sin causa</span></figcaption>
+            </figure>
+            <figure class="testimonio">
+              <blockquote>Después de mi accidente la ART no respondía. El estudio se ocupó de todo y estuvo pendiente de mi caso hasta el final.</blockquote>
+              <figcaption>Laura M. <span>Accidente de trabajo</span></figcaption>
+            </figure>
+            <figure class="testimonio">
+              <blockquote>Trato humano y muy profesional. Siempre me atendieron y me dijeron la verdad sobre las posibilidades reales de mi reclamo.</blockquote>
+              <figcaption>Martín G. <span>Daños y perjuicios</span></figcaption>
+            </figure>
+          </div>
+          <div class="carrusel__puntos" id="carrusel-puntos"></div>
+        </div>
+        <p class="clientes__aviso">Opiniones de ejemplo, escritas para esta demostración.</p>
+      </div>
+    </section>
+
+    <!-- ===== CONTACTO ===== -->
+    <section class="seccion contacto" id="contacto">
+      <div class="contenedor cuadricula-dos">
+
+        <div class="contacto__datos">
+          <h2 class="titulo-seccion titulo-seccion--claro"><strong>Contáctenos</strong></h2>
+          <p><strong>Dirección</strong>Av. Ejemplo 1234, Piso 5, Oficina B</p>
+          <p><strong>Teléfono</strong>+54 11 0000-0000</p>
+          <p><strong>Correo</strong>contacto@example.com</p>
+          <p><strong>Horario</strong>Lunes a viernes, de 9 a 18 h</p>
+          <a class="boton boton--contorno" href="https://wa.me/5491100000000" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+
+        <form class="formulario" id="formulario-contacto">
+
+          <h3 class="formulario__titulo">Contanos en que podemos ayudarte</h3>
+
+          <div class="campo">
+            <label for="nombre">Nombre y apellido</label>
+            <input type="text" id="nombre" name="nombre" required autocomplete="name">
+          </div>
+          <div class="campo">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required autocomplete="email">
+          </div>
+          <div class="campo">
+            <label for="area-consulta">Área de la consulta</label>
+            <select id="area-consulta" name="area">
+              <option>Servicios laborales</option>
+              <option>Indemnizaciones</option>
+              <option>ART</option>
+              <option>Despidos sin causa</option>
+              <option>Enfermedades profesionales</option>
+              <option>Derecho civil y daños</option>
+              <option>Otra</option>
+            </select>
+          </div>
+          <div class="campo">
+            <label for="mensaje">Cuéntenos su caso</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <button class="boton" type="submit">Enviar consulta</button>
+          <p class="mensaje-envio" id="mensaje-envio" role="status"></p>
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+  <footer class="pie">
+    <div class="pie__interior">
+  
+      <!-- Columna 1: Marca -->
+      <div class="pie__columna pie__columna--marca">
+        <a class="marca" href="#inicio" aria-label="Mendoza y Asociados, ir al inicio">
+          <span class="marca__sigla">M&amp;A</span>
+          <span class="marca__nombre">Mendoza &amp; Asociados<small>Estudio jurídico</small></span>
+        </a>
+        <p class="pie__descripcion">Estudio jurídico especializado en derecho laboral. Más de veinte años acompañando a personas y empresas.</p>
+        <a class="pie__subir" href="#inicio">Volver arriba</a>
+      </div>
+  
+      <!-- Columna 2: Redes sociales -->
+      <div class="pie__columna">
+        <h3 class="pie__subtitulo">Seguinos</h3>
+        <ul class="pie__redes">
+          <li>
+            <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+              <img src="img/seccion-iconos/icons8-instagram-24.png" alt="Instagram" width="24" height="24">
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+              <img src="img/seccion-iconos/icons8-facebook-nuevo-50.png" alt="Facebook" width="24" height="24">
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://wa.me/5491100000000" target="_blank" rel="noopener" aria-label="WhatsApp">
+              <img src="img/seccion-iconos/icons8-whatsapp-24.png" alt="WhatsApp" width="24" height="24">
+              <span>WhatsApp</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X (Twitter)">
+              <img src="img/seccion-iconos/icons8-twitterx-50.png" alt="X" width="24" height="24">
+              <span>X (Twitter)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <!-- Columna 3: Créditos -->
+      <div class="pie__columna">
+        <h3 class="pie__subtitulo">Créditos</h3>
+        <ul class="pie__creditos">
+          <li>Íconos por <a href="https://www.flaticon.com/" target="_blank" rel="noopener">Flaticon</a></li>
+          <li>Imágenes por <a href="https://pixabay.com/" target="_blank" rel="noopener">Pixabay</a></li>
+          <li>Íconos por <a href="https://iconos8.es/" target="_blank" rel="noopener">Icons8</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  
+    <!-- Barra inferior -->
+    <div class="pie__barra">
+      <p>© <span id="anio-actual">2026</span> Mendoza &amp; Asociados. Todos los derechos reservados.</p>
+      <p class="pie__aviso">Sitio de demostración: el nombre, los datos de contacto, las opiniones y los servicios son ficticios. Proyecto de práctica de Brandon Ventura.</p>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÓN FLOTANTE DE WHATSAPP ===== -->
+  <a class="whatsapp-flotante" href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <img class="whatsapp-flotante__icono" src="img/seccion-iconos/icons8-whatsapp-24.png" alt="WhatsApp" width="28" height="28">
+  </a>
+
+  <script src="principal.js"></script>
+</body>
+</html>

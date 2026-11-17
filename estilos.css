@@ -1,0 +1,1002 @@
+/* =========================================================
+   ESTILOS.CSS - Mendoza & Asociados, estudio jurídico (demostración)
+   Índice: 1 Variables | 2 Base | 3 Encabezado | 4 Inicio
+   5 Quiénes somos | 6 Áreas de práctica | 7 Abogados | 8 Clientes
+   9 Contacto | 10 Pie | 11 Animaciones | 12 Adaptable
+   ========================================================= */
+
+/* ---------- 1. VARIABLES ---------- */
+:root {
+  --azul-profundo: #06294f;
+  --azul: #0f4c8a;
+  --turquesa: #26a5b5;
+  --celeste: #e8f0f5;
+  --hueso: #f7f9fa;
+  --tinta: #0b2340;
+  --gris: #4d5f73;
+  --claro: #b9c9da;
+
+  --fuente-titulo: "Raleway", "Helvetica Neue", Arial, sans-serif;
+  --fuente-texto: "Source Sans 3", system-ui, sans-serif;
+
+  --ancho: 1180px;
+  --margen: clamp(1rem, 4vw, 2.5rem);
+}
+
+
+/* ---------- 2. BASE ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  background: var(--hueso);
+  color: var(--tinta);
+  font: 400 1.05rem/1.65 var(--fuente-texto);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid var(--turquesa);
+  outline-offset: 3px;
+}
+
+.contenedor {
+  max-width: var(--ancho);
+  margin: 0 auto;
+}
+
+.seccion {
+  padding: clamp(4rem, 8vw, 7rem) var(--margen);
+}
+
+.cuadricula-dos {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+/* Título con dos pesos: la primera palabra en negrita, el resto liviano */
+.titulo-seccion {
+  color: var(--azul-profundo);
+  font: 400 clamp(1.7rem, 3vw, 2.4rem)/1.15 var(--fuente-titulo);
+  text-transform: uppercase;
+}
+
+.titulo-seccion strong {
+  display: block;
+  font-weight: 800;
+}
+
+.titulo-seccion--centrado {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  text-align: center;
+}
+
+.titulo-seccion--claro {
+  color: #fff;
+}
+
+/* Botón principal y su versión con contorno */
+.boton {
+  display: inline-block;
+  padding: .85rem 2rem;
+  border: 2px solid var(--turquesa);
+  background: var(--turquesa);
+  color: var(--azul-profundo);
+  font: 600 .9rem var(--fuente-titulo);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  transition: transform .25s, box-shadow .25s, background .25s, color .25s;
+}
+
+.boton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(6, 41, 79, .3);
+}
+
+.boton--contorno {
+  background: none;
+  color: #fff;
+}
+
+.boton--contorno:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--azul-profundo);
+}
+
+/* Marco de imagen: si el archivo no existe, muestra la ruta que falta */
+.marco {
+  position: relative;
+  overflow: hidden;
+  background: var(--claro);
+}
+
+.marco img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.marco.sin-imagen img {
+  display: none;
+}
+
+.marco.sin-imagen::after {
+  content: "Tu imagen acá: " attr(data-ruta);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: .85rem;
+  color: var(--gris);
+}
+
+
+/* ---------- 3. ENCABEZADO ---------- */
+.encabezado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(255, 255, 255, .96);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 1px 0 rgba(6, 41, 79, .08);
+  transition: box-shadow .3s;
+}
+
+.encabezado--reducido {
+  box-shadow: 0 6px 24px rgba(6, 41, 79, .14);
+}
+
+/* Logo y menú forman un solo grupo centrado */
+.encabezado__interior {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(2rem, 6vw, 5rem);
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: 1rem var(--margen);
+  transition: padding .3s;
+}
+
+.encabezado--reducido .encabezado__interior {
+  padding-block: .5rem;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--azul-profundo);
+}
+
+.marca__sigla {
+  display: grid;
+  place-items: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--azul-profundo);
+  clip-path: polygon(0 0, 100% 0, 100% 68%, 68% 100%, 0 100%);
+  color: #fff;
+  font: 800 .9rem var(--fuente-titulo);
+}
+
+.marca__nombre {
+  font: 800 1rem/1.15 var(--fuente-titulo);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.marca__nombre small {
+  display: block;
+  color: var(--turquesa);
+  font: 600 .62rem var(--fuente-titulo);
+  letter-spacing: .24em;
+}
+
+.menu {
+  display: flex;
+  gap: clamp(1.2rem, 2.4vw, 2.2rem);
+}
+
+.menu__enlace {
+  position: relative;
+  padding: .4rem 0;
+  color: var(--azul);
+  font: 600 .8rem var(--fuente-titulo);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Barra inferior: se dibuja al pasar el cursor y queda en la sección actual */
+.menu__enlace::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--turquesa);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+
+.menu__enlace:hover::after,
+.menu__enlace.activo::after {
+  transform: scaleX(1);
+}
+
+.menu__enlace.activo {
+  color: var(--azul-profundo);
+}
+
+.boton-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: .6rem;
+  border: 0;
+  background: none;
+}
+
+.boton-menu__linea {
+  display: block;
+  height: 2px;
+  background: var(--azul-profundo);
+  transition: transform .3s ease, opacity .2s ease;
+}
+
+/* Menú abierto: las rayas se cruzan y forman una X */
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(2) {
+  opacity: 0;
+}
+
+.boton-menu[aria-expanded="true"] .boton-menu__linea:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ---------- 4. INICIO ---------- */
+.inicio {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 6rem 0 3rem;
+  background: var(--azul-profundo);
+  color: #fff;
+  clip-path: inset(0);
+}
+
+.inicio__video {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Velo azul más fuerte a la izquierda, donde va el texto */
+.inicio::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(6, 41, 79, .93) 0%, rgba(6, 41, 79, .8) 45%, rgba(6, 41, 79, .1) 100%);
+}
+
+.inicio__panel {
+  width: min(100%, 38rem);
+  margin-left: max(var(--margen), calc((100% - var(--ancho)) / 2));
+  padding-right: var(--margen);
+}
+
+.inicio__etiqueta {
+  margin-bottom: 1rem;
+  color: var(--turquesa);
+  font: 600 .8rem var(--fuente-titulo);
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.inicio__titulo {
+  font: 800 clamp(2rem, 4.2vw, 3.2rem)/1.1 var(--fuente-titulo);
+}
+
+.inicio__texto {
+  margin: 1.2rem 0 2rem;
+  font-size: 1.15rem;
+}
+
+
+/* ---------- 5. QUIÉNES SOMOS ---------- */
+.quienes-somos {
+  background: var(--celeste);
+}
+
+.quienes-somos__texto p {
+  margin-bottom: 1rem;
+  color: var(--gris);
+}
+
+.cifras {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  list-style: none;
+}
+
+.cifra {
+  padding-top: 1rem;
+  border-top: 3px solid var(--turquesa);
+}
+
+.cifra__numero {
+  display: block;
+  color: var(--azul);
+  font: 300 clamp(2.2rem, 4vw, 3.2rem)/1 var(--fuente-titulo);
+}
+
+.cifra span {
+  color: var(--gris);
+  font-size: .95rem;
+}
+
+
+/* ---------- 6. ÁREAS DE PRÁCTICA ---------- */
+.areas__lista {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 2.5rem;
+}
+
+.area {
+  position: relative;
+  padding: 1.1rem 1rem 1.1rem 1.6rem;
+  border-bottom: 1px solid rgba(6, 41, 79, .15);
+  transition: background .3s;
+}
+
+.area:hover,
+.area.abierta {
+  background: var(--celeste);
+}
+
+/* Franja lateral: crece al pasar el cursor y queda completa cuando el área está abierta */
+.area::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--turquesa);
+  transform: scaleY(.3);
+  transform-origin: top;
+  transition: transform .35s ease;
+}
+
+.area:hover::before,
+.area.abierta::before {
+  transform: scaleY(1);
+}
+
+.area__boton {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  width: 100%;
+  border: 0;
+  background: none;
+  color: var(--azul-profundo);
+  font: 600 1rem var(--fuente-titulo);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.area__boton::after {
+  content: "+";
+  margin-left: auto;
+  font-size: 1.4rem;
+  line-height: 1;
+  transition: transform .3s;
+}
+
+.area__boton[aria-expanded="true"]::after {
+  transform: rotate(45deg);
+}
+
+.area__resumen {
+  margin: .4rem 0 0;
+  color: var(--gris);
+  font-size: .95rem;
+}
+
+/* El detalle se despliega animando el alto de 0 a su tamaño real */
+.area__detalle {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .4s ease;
+}
+
+.area__detalle > div {
+  overflow: hidden;
+}
+
+.area.abierta .area__detalle {
+  grid-template-rows: 1fr;
+}
+
+.area__detalle p {
+  margin: .8rem 0;
+  font-size: .95rem;
+}
+
+.area__consulta {
+  display: inline-block;
+  border-bottom: 2px solid var(--turquesa);
+  color: var(--azul);
+  font: 600 .85rem var(--fuente-titulo);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.area__consulta:hover {
+  color: var(--turquesa);
+}
+
+
+/* ---------- 7. ABOGADOS ---------- */
+.abogados {
+  background: var(--celeste);
+}
+
+.abogados__lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 17rem));
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.abogado {
+  text-align: center;
+}
+
+.abogado__foto {
+  aspect-ratio: 4 / 5;
+  margin-bottom: 1.2rem;
+}
+
+.abogado:hover .abogado__foto img {
+  transform: scale(1.06);
+}
+
+.abogado__nombre {
+  color: var(--azul-profundo);
+  font: 600 1.15rem var(--fuente-titulo);
+  text-transform: uppercase;
+}
+
+.abogado__cargo {
+  color: var(--turquesa);
+  font: 600 .85rem var(--fuente-titulo);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* Línea que crece bajo el cargo al pasar el cursor */
+.abogado__cargo::after {
+  content: "";
+  display: block;
+  width: 3rem;
+  height: 2px;
+  margin: .8rem auto;
+  background: var(--azul);
+  transition: width .4s;
+}
+
+.abogado:hover .abogado__cargo::after {
+  width: 100%;
+}
+
+.abogado__contacto {
+  color: var(--gris);
+  font-size: .9rem;
+}
+
+
+/* ---------- 8. CLIENTES ---------- */
+.clientes {
+  background: var(--azul-profundo);
+  color: #fff;
+}
+
+.carrusel {
+  max-width: 46rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Todos los testimonios ocupan el mismo lugar y se cruzan con un fundido */
+.carrusel__pistas {
+  display: grid;
+}
+
+.testimonio {
+  grid-area: 1 / 1;
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: opacity .6s, transform .6s;
+  pointer-events: none;
+}
+
+.testimonio.activo {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+.testimonio blockquote {
+  font: 300 clamp(1.3rem, 2.4vw, 1.8rem)/1.4 var(--fuente-titulo);
+}
+
+.testimonio figcaption {
+  margin-top: 1.2rem;
+  font-weight: 600;
+}
+
+.testimonio figcaption span {
+  display: block;
+  color: var(--turquesa);
+  font-size: .9rem;
+}
+
+.carrusel__puntos {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+  margin-top: 2rem;
+}
+
+.carrusel__puntos button {
+  width: .8rem;
+  height: .8rem;
+  border: 2px solid var(--turquesa);
+  border-radius: 50%;
+  background: none;
+  transition: background .3s, transform .3s;
+}
+
+.carrusel__puntos button.activo {
+  background: var(--turquesa);
+  transform: scale(1.25);
+}
+
+.clientes__aviso {
+  margin-top: 2rem;
+  color: var(--claro);
+  font-size: .85rem;
+  text-align: center;
+}
+
+
+/* ---------- 9. CONTACTO ---------- */
+.contacto {
+  background: linear-gradient(135deg, var(--azul) 0%, var(--azul-profundo) 100%);
+  color: #fff;
+}
+
+.contacto__datos p {
+  margin-top: 1.2rem;
+}
+
+.contacto__datos strong {
+  display: block;
+  color: var(--turquesa);
+  font: 600 .8rem var(--fuente-titulo);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.contacto__datos .boton {
+  margin-top: 2rem;
+}
+
+.formulario {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, .35);
+  background: rgba(255, 255, 255, .06);
+  transition: box-shadow .3s;
+}
+
+/* El marco se ilumina mientras el usuario completa un campo */
+.formulario:focus-within {
+  box-shadow: 0 0 0 1px var(--turquesa), 0 12px 32px rgba(0, 0, 0, .25);
+}
+
+.campo label {
+  display: block;
+  margin-bottom: .3rem;
+  font-size: .9rem;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  width: 100%;
+  padding: .8rem 1rem;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: #fff;
+  color: var(--tinta);
+  transition: border-color .25s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: none;
+  border-bottom-color: var(--turquesa);
+}
+
+.formulario .boton {
+  justify-self: start;
+}
+
+.mensaje-envio {
+  color: var(--turquesa);
+  min-height: 1.6rem;
+}
+
+.formulario__titulo {
+  color: #fff;
+  font: 600 1.1rem var(--fuente-titulo);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-left: 3px solid var(--turquesa);
+  padding-left: .8rem;
+}
+
+/* ---------- 10. PIE ---------- */
+.pie {
+  background: #041c36;
+  color: var(--claro);
+  font-size: .9rem;
+}
+/* Grilla de tres columnas */
+.pie__interior {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  max-width: var(--ancho);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) var(--margen);
+}
+/* Columna de marca: logo + descripción + volver arriba */
+.pie__descripcion {
+  margin: 1.2rem 0 1.5rem;
+  color: var(--claro);
+  font-size: .88rem;
+  line-height: 1.6;
+  max-width: 28ch;
+}
+/* Volver arriba */
+.pie__subir {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font: 600 .8rem var(--fuente-titulo);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--turquesa);
+  transition: transform .25s, color .25s;
+}
+.pie__subir::before {
+  content: "";
+  display: inline-block;
+  width: .6rem;
+  height: .6rem;
+  border-top: 2px solid currentColor;
+  border-left: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+.pie__subir:hover {
+  transform: translateY(-3px);
+  color: #fff;
+}
+/* Título de columna */
+.pie__subtitulo {
+  margin-bottom: 1.2rem;
+  color: #fff;
+  font: 700 .8rem var(--fuente-titulo);
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border-left: 3px solid var(--turquesa);
+  padding-left: .6rem;
+}
+/* Redes sociales */
+.pie__redes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.pie__redes a {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  color: var(--claro);
+  transition: color .25s, transform .25s;
+}
+.pie__redes a:hover {
+  color: #fff;
+  transform: translateX(4px);
+}
+.pie__redes img {
+  width: 1.3rem;
+  height: 1.3rem;
+  object-fit: contain;
+  opacity: .85;
+  filter: brightness(0) invert(1); /* los vuelve blancos */
+}
+.pie__redes a:hover img {
+  opacity: 1;
+}
+/* Créditos */
+.pie__creditos {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  color: var(--claro);
+  font-size: .88rem;
+}
+.pie__creditos a {
+  color: var(--turquesa);
+  border-bottom: 1px solid transparent;
+  transition: border-color .25s, color .25s;
+}
+.pie__creditos a:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+/* Barra inferior */
+.pie__barra {
+  border-top: 1px solid rgba(185, 201, 218, .15);
+  padding: 1.5rem var(--margen);
+  text-align: center;
+  font-size: .82rem;
+  color: var(--claro);
+}
+.pie__aviso {
+  margin-top: .4rem;
+  font-size: .78rem;
+  opacity: .7;
+}
+
+
+/* ===== BOTÓN FLOTANTE WHATSAPP ===== */
+.whatsapp-flotante {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  z-index: 25;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;                        /* ← círculo perfecto */
+
+  background:#38BDF8;                       /* ← Boton celeste de WhatsApp */
+  box-shadow: 0 8px 24px rgba(6, 41, 79, .35);
+  text-decoration: none;
+
+  transition: transform .25s, box-shadow .25s;
+}
+
+.whatsapp-flotante:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(6, 41, 79, .45);
+}
+
+.whatsapp-flotante__icono {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+  object-fit: contain;
+}
+
+/* ── Aro que late alrededor del botón ── */
+.whatsapp-flotante::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;                        /* ← también circular */
+  border: 2px solid #38BDF8;   /* ← mismo celeste para el aro */
+  pointer-events: none;
+  animation: latido 2.4s ease-out infinite;
+}
+
+/* ── Keyframe del latido ── */
+@keyframes latido {
+  0%   { transform: scale(1);    opacity: .8; }
+  70%  { transform: scale(1.65); opacity: 0;  }
+  100% { transform: scale(1.65); opacity: 0;  }
+}
+
+/* ── Sin animaciones si el usuario lo prefiere ── */
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-flotante::before {
+    animation: none;
+  }
+}
+
+/* ---------- 11. ANIMACIONES ---------- */
+/* Aparición al bajar: el JS agrega estas clases */
+.revelar {
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity .8s ease, transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+
+.revelar.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Texto de la portada al cargar */
+.inicio__panel > * {
+  animation: entrar-desde-abajo .8s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+
+.inicio__panel > :nth-child(2) { animation-delay: .15s; }
+.inicio__panel > :nth-child(3) { animation-delay: .3s; }
+.inicio__panel > :nth-child(4) { animation-delay: .45s; }
+
+@keyframes entrar-desde-abajo {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .revelar {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------- 12. ADAPTABLE ---------- */
+@media (max-width: 900px) {
+
+  /* Encabezado: logo a la izquierda y botón de menú a la derecha */
+  .encabezado__interior {
+    justify-content: space-between;
+  }
+
+  .boton-menu {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem var(--margen);
+    background: #fff;
+    box-shadow: 0 12px 24px rgba(6, 41, 79, .12);
+  }
+
+  .menu.abierto {
+    display: flex;
+  }
+
+  /* Inicio */
+  .inicio::after {
+    background: rgba(6, 41, 79, .85);
+  }
+
+  .inicio__panel {
+    margin-inline: var(--margen);
+  }
+
+  
+
+  /* Secciones en una sola columna */
+  .cuadricula-dos,
+  .areas__lista {
+    grid-template-columns: 1fr;
+  }
+
+  .abogados__lista {
+    grid-template-columns: minmax(0, 17rem);
+  }
+
+   .pie__interior {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pie__columna--marca {
+    grid-column: 1 / -1;
+  }
+  .pie__descripcion {
+    max-width: 100%;
+  }
+
+}
+
+@media (max-width: 520px) {
+  .cifras {
+    grid-template-columns: 1fr;
+  }
+
+  .pie__interior {
+    grid-template-columns: 1fr;
+  }
+}
